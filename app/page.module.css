@@ -1,0 +1,375 @@
+.page {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.navWrap {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: linear-gradient(180deg, rgba(249, 249, 249, 0.92), rgba(249, 249, 249, 0.7));
+  backdrop-filter: blur(12px);
+}
+
+.nav {
+  width: min(calc(100% - 2rem), var(--max-page));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.brand {
+  font-size: 0.88rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--muted-strong);
+  font-size: 0.95rem;
+}
+
+.navCta,
+.heroPrimary,
+.heroSecondary,
+.docsCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.navCta,
+.heroPrimary,
+.docsCta {
+  background: var(--fg);
+  color: white;
+  box-shadow: 0 16px 30px rgba(26, 26, 26, 0.12);
+}
+
+.heroSecondary {
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--fg);
+  border: 1px solid var(--line);
+}
+
+.navCta:hover,
+.heroPrimary:hover,
+.heroSecondary:hover,
+.docsCta:hover {
+  transform: translateY(-1px);
+}
+
+.hero {
+  width: min(calc(100% - 2rem), var(--max-page));
+  margin: 0 auto;
+  padding: clamp(3rem, 7vw, 6rem) 0 clamp(5rem, 10vw, 8rem);
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 32rem) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+}
+
+.heroCopy {
+  max-width: var(--max-copy);
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--muted-strong);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+}
+
+.heroH1 {
+  margin: 1rem 0 0;
+  font-size: clamp(3.75rem, 8vw, 7.15rem);
+  line-height: 0.95;
+  letter-spacing: -0.08em;
+}
+
+.heroLead {
+  margin: 1.25rem 0 0;
+  color: var(--muted-strong);
+  font-size: clamp(1.06rem, 2vw, 1.2rem);
+  line-height: 1.7;
+}
+
+.heroHook {
+  margin-top: 1.15rem;
+  max-width: 30rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.6rem;
+}
+
+.heroMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.7rem;
+}
+
+.metaPill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.1rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--line);
+  color: var(--muted-strong);
+  font-size: 0.84rem;
+}
+
+.section {
+  width: min(calc(100% - 2rem), var(--max-page));
+  margin: 0 auto;
+  padding: clamp(3.5rem, 6vw, 6rem) 0;
+}
+
+.sectionIntro {
+  display: grid;
+  gap: 0.7rem;
+  max-width: 42rem;
+  margin-bottom: 2rem;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: clamp(2.1rem, 5vw, 4.2rem);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.sectionBody {
+  margin: 0;
+  color: var(--muted-strong);
+  line-height: 1.75;
+}
+
+.masonry {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+  align-items: start;
+}
+
+.stack {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.terminalWrap {
+  min-height: 100%;
+}
+
+.mcpBadge {
+  display: grid;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 1.6rem;
+  background:
+    radial-gradient(circle at top right, rgba(114, 82, 63, 0.18), transparent 30%),
+    rgba(255, 255, 255, 0.78);
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 48px rgba(26, 26, 26, 0.08);
+}
+
+.mcpBadgeMark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1.2rem;
+  background: var(--fg);
+  color: white;
+  font-size: 1.15rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.mcpBadge h3 {
+  margin: 0;
+  font-size: 2rem;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.mcpBadge p {
+  margin: 0;
+  color: var(--muted-strong);
+  line-height: 1.65;
+}
+
+.mcpSignals {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.constructShell {
+  padding: 1.3rem 0 0;
+}
+
+.docsPanel {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 1.5rem;
+  align-items: stretch;
+}
+
+.docsCard,
+.statsCard {
+  border-radius: 1.8rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 48px rgba(26, 26, 26, 0.08);
+}
+
+.docsCard h3,
+.statsCard h3 {
+  margin: 0;
+  font-size: 1.55rem;
+  letter-spacing: -0.05em;
+}
+
+.docsCard p,
+.statsCard p {
+  margin: 0.85rem 0 0;
+  color: var(--muted-strong);
+  line-height: 1.7;
+}
+
+.docsBulletList {
+  margin: 1.1rem 0 0;
+  padding-left: 1rem;
+  color: var(--muted-strong);
+  line-height: 1.75;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+}
+
+.statTile {
+  border-radius: 1.2rem;
+  padding: 1rem;
+  background: rgba(249, 249, 249, 0.95);
+  border: 1px solid rgba(26, 26, 26, 0.08);
+}
+
+.statLabel {
+  color: var(--muted-strong);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.statValue {
+  margin-top: 0.4rem;
+  font-size: 1.5rem;
+  letter-spacing: -0.04em;
+}
+
+.footer {
+  padding: 5rem 0 2rem;
+}
+
+.footerTop {
+  width: min(calc(100% - 2rem), var(--max-page));
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1.2rem;
+}
+
+.footerTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.footerWordmark {
+  width: min(calc(100% - 1rem), calc(var(--max-page) + 10rem));
+  margin: 0 auto;
+  font-size: clamp(4.5rem, 18vw, 17rem);
+  line-height: 0.78;
+  letter-spacing: -0.11em;
+  text-align: center;
+}
+
+@media (max-width: 1100px) {
+  .heroGrid,
+  .masonry,
+  .featuresGrid,
+  .docsPanel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav {
+    padding: 0.9rem 0;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .hero {
+    padding-top: 2.3rem;
+  }
+
+  .section,
+  .hero {
+    width: min(calc(100% - 1.2rem), var(--max-page));
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .statsGrid {
+    grid-template-columns: 1fr;
+  }
+}
