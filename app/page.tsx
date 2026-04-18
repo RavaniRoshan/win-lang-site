@@ -1,3 +1,5 @@
+import { NavLinks } from "@/components/site/Nav";
+import { BrandLogo } from "@/components/site/BrandLogo";
 import Link from "next/link";
 
 import { CodeBlock } from "@/components/site/CodeBlock";
@@ -70,18 +72,10 @@ export default function HomePage() {
     <main className={styles.page}>
       <div className={styles.navWrap}>
         <header className={styles.nav}>
-          <Link href="/" className={styles.brand}>
-            {heroEyebrow}
-          </Link>
-          <nav className={styles.navLinks} aria-label="Primary">
-            {siteNav.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
-          <Link href="/docs" className={styles.navCta}>
-            Read the docs
+          <BrandLogo text={heroEyebrow} />
+          <NavLinks />
+          <Link href="/docs" className={`${styles.navCta} ${styles.dashboardStyle}`}>
+            Dashboard
           </Link>
         </header>
       </div>

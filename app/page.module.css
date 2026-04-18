@@ -373,3 +373,121 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* New Navigation Styles */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  text-transform: none;
+  color: var(--fg);
+}
+
+.brandIcon {
+  flex-shrink: 0;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--muted-strong);
+  font-size: 0.95rem;
+  position: relative;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.navItem:hover {
+  color: var(--fg);
+}
+
+.navItemWrapper {
+  position: relative;
+}
+
+.navChevron {
+  transition: transform 0.2s ease;
+}
+
+.navChevronOpen {
+  transform: rotate(180deg);
+}
+
+.navDropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 0.5rem;
+  z-index: 50;
+  width: max-content;
+  min-width: 200px;
+}
+
+.navDropdownInner {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navDropdownItem {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.15s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.navDropdownItem:hover {
+  background-color: rgba(0, 120, 212, 0.05); /* Windows 11 Blue tint on hover */
+}
+
+.navDropdownLabel {
+  font-weight: 500;
+  color: var(--fg);
+}
+
+.navDropdownDesc {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+/* Dashboard Button Style */
+.dashboardStyle {
+  background-color: #f3f3f3; /* Light gray */
+  color: var(--fg);
+  border: 1px solid var(--line);
+  box-shadow: none;
+  font-weight: 500;
+  padding: 0.6rem 1rem;
+  min-height: auto;
+  border-radius: var(--radius-md); /* Less rounded than full pill */
+}
+
+.dashboardStyle:hover {
+  background-color: #e5e5e5;
+  transform: none; /* Remove the translate effect */
+  box-shadow: none;
+}
