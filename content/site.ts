@@ -39,6 +39,28 @@ export type PipelineStep = {
   detail: string;
 };
 
+export type ReleaseFeature = {
+  title: string;
+  summary: string;
+  detail: string;
+  impact: string;
+};
+
+export type ReleaseEntry = {
+  id: string;
+  label: string;
+  version: string;
+  releasedOn: string;
+  headline: string;
+  summary: string;
+  spotlightTitle: string;
+  spotlightBody: string;
+  highlights: string[];
+  features: ReleaseFeature[];
+  statusTitle: string;
+  statusBody: string;
+};
+
 export const heroIcons: FloatingIcon[] = [
   {
     src: "/icons/chrome.svg",
@@ -249,7 +271,8 @@ export const footerTags = [
 
 export const siteNav = [
   { href: "/", label: "Home" },
-  { href: "/docs", label: "Docs" }
+  { href: "/docs", label: "Docs" },
+  { href: "/updates", label: "Updates" }
 ];
 
 export const docsSections = [
@@ -305,3 +328,61 @@ export const docsToolHighlights: Array<{ title: string; body: ReactNode }> = [
     body: "CDP is live for Chrome and Electron apps, with COM and UIA expanding the same mental model across Windows."
   }
 ];
+
+export const releaseEntries: ReleaseEntry[] = [
+  {
+    id: "automation-ecosystem-apr-2026",
+    label: "Latest update",
+    version: "Current milestone",
+    releasedOn: "April 2026",
+    headline: "WinScript is now a complete Windows automation ecosystem.",
+    summary:
+      "This release turns WinScript from a promising language runtime into a day-to-day toolchain: shared libraries, an installable CLI, a live REPL, Excel COM routing, and a professional VS Code experience.",
+    spotlightTitle: "Major release focus: the language now feels shippable, not experimental.",
+    spotlightBody:
+      "The biggest shift is product maturity. You can package it, validate it, live-code in it, wire it into Excel through nested COM contexts, and edit it with diagnostics, autocomplete, and hover docs inside VS Code.",
+    highlights: ["Shared libraries", "CLI tooling", "Stateful REPL", "Excel COM v2", "VS Code LSP"],
+    features: [
+      {
+        title: "Script Library System",
+        summary: "Developers can import reusable `.wslib` modules directly into scripts.",
+        detail:
+          "A dedicated `LibraryLoader` resolves imports from local paths and standard APPDATA locations, while enforcing that library files only expose reusable function definitions with no dangerous top-level execution.",
+        impact: "WinScript now supports real code sharing without giving up runtime safety."
+      },
+      {
+        title: "Installable Command-Line Interface",
+        summary: "WinScript now ships as a standard CLI package for execution, validation, and discovery.",
+        detail:
+          "Running `winscript script.ws` executes a file, while flags like `--validate`, `--apps`, and `--commands Chrome` make the runtime inspectable. CLI arguments also flow into scripts dynamically as `$1`, `$2`, and onward.",
+        impact: "The language can now plug into local workflows, demos, and automation pipelines cleanly."
+      },
+      {
+        title: "Interactive REPL Shell",
+        summary: "A colorful, stateful terminal interface now supports live-coding WinScript.",
+        detail:
+          "Invoking `winscript` with no file opens a REPL with multi-line awareness, persistent variables and functions, history, and environment commands such as `:vars`, `:funcs`, `:clear`, and `:load <file>`.",
+        impact: "Learning, debugging, and iterating on scripts is dramatically faster."
+      },
+      {
+        title: "Microsoft Excel COM Integration",
+        summary: "WinScript now includes the official v2-style COM path for Excel automation.",
+        detail:
+          "Natural commands like setting a cell value map directly onto `pywin32` COM methods, and the upgraded backend uses nested context routing so `tell Excel` and nested sheet scopes track the correct COM object stack under the hood.",
+        impact: "Excel automation feels natural in the language while still routing correctly through COM internals."
+      },
+      {
+        title: "VS Code Extension and Language Server",
+        summary: "WinScript now has editor-grade tooling for writing and inspecting scripts.",
+        detail:
+          "The TypeScript extension and Python `pygls` server add syntax highlighting, live diagnostics, app-aware autocomplete after `tell`, and hover documentation pulled dynamically from `.wsdict` files.",
+        impact: "WinScript now behaves like a serious language inside the editor, not just a script format."
+      }
+    ],
+    statusTitle: "Current project status",
+    statusBody:
+      "WinScript now has a typed runtime, a packaged CLI, live REPL tooling, nested COM integration for Excel, and a VS Code editing surface. The product story has shifted from language concept to robust automation platform."
+  }
+];
+
+export const latestRelease = releaseEntries[0];

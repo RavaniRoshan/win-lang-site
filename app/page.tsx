@@ -5,6 +5,7 @@ import { ConstructList } from "@/components/site/ConstructList";
 import { DiagramCard } from "@/components/site/DiagramCard";
 import { FeatureTile } from "@/components/site/FeatureTile";
 import { HeroMedia } from "@/components/site/HeroMedia";
+import { LatestReleasePopup } from "@/components/site/LatestReleasePopup";
 import { SectionReveal } from "@/components/site/SectionReveal";
 import siteStyles from "@/components/site/site.module.css";
 import {
@@ -17,6 +18,7 @@ import {
   heroIcons,
   heroSupportingLine,
   homepageFeatures,
+  latestRelease,
   siteNav,
   wsdictSnippet
 } from "@/content/site";
@@ -108,8 +110,8 @@ export default function HomePage() {
               >
                 View GitHub repo
               </a>
-              <Link href="#system" className={styles.heroSecondary}>
-                See the system
+              <Link href="/updates" className={styles.heroSecondary}>
+                Latest updates
               </Link>
             </div>
             <div className={styles.heroMeta}>
@@ -280,6 +282,8 @@ export default function HomePage() {
         </div>
         <div className={styles.footerWordmark}>{footerWordmark}</div>
       </footer>
+
+      <LatestReleasePopup release={latestRelease} />
     </main>
   );
 }

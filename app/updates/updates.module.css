@@ -1,0 +1,291 @@
+.page {
+  min-height: 100vh;
+  overflow-x: clip;
+}
+
+.shell {
+  width: min(calc(100% - 2rem), var(--max-page));
+  margin: 0 auto;
+  padding: 1rem 0 5rem;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.35rem 0 1.5rem;
+}
+
+.brand {
+  font-size: 0.88rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.navLinks {
+  display: flex;
+  gap: 1rem;
+  color: var(--muted-strong);
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.navCta,
+.secondaryCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding: 0.85rem 1.2rem;
+  border-radius: 999px;
+}
+
+.navCta {
+  background: var(--fg);
+  color: white;
+}
+
+.secondaryCta {
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.68);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(18rem, 0.92fr);
+  gap: 1.2rem;
+  padding: 1rem 0 3rem;
+}
+
+.heroCopy {
+  max-width: 44rem;
+}
+
+.eyebrow,
+.cardEyebrow {
+  display: inline-flex;
+  color: var(--muted-strong);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+}
+
+.heroTitle {
+  margin: 0.9rem 0 0;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.94;
+  letter-spacing: -0.08em;
+}
+
+.heroBody,
+.sectionBody,
+.spotlightCard p,
+.releaseHeader p,
+.featureCard p,
+.statusCard p,
+.statusItem span {
+  color: var(--muted-strong);
+  line-height: 1.72;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.3rem;
+}
+
+.metaPill,
+.highlightPill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.1rem;
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid var(--line);
+  color: var(--muted-strong);
+  font-size: 0.84rem;
+}
+
+.ctaRow,
+.highlightRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 1.2rem;
+}
+
+.spotlightCard,
+.releaseBlock,
+.featureCard,
+.statusCard,
+.statusList {
+  border-radius: 1.8rem;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid var(--line);
+  box-shadow: 0 22px 48px rgba(26, 26, 26, 0.08);
+}
+
+.spotlightCard {
+  padding: 1.45rem;
+  background:
+    radial-gradient(circle at top right, rgba(114, 82, 63, 0.18), transparent 34%),
+    rgba(255, 255, 255, 0.78);
+}
+
+.spotlightCard h2,
+.releaseHeader h3,
+.sectionTitle,
+.statusCard h2 {
+  margin: 0.75rem 0 0;
+  letter-spacing: -0.05em;
+}
+
+.spotlightCard h2,
+.releaseHeader h3,
+.statusCard h2 {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  line-height: 1;
+}
+
+.section {
+  padding: 2rem 0 0;
+}
+
+.sectionIntro {
+  display: grid;
+  gap: 0.7rem;
+  max-width: 42rem;
+  margin-bottom: 1.6rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.98;
+}
+
+.releaseList {
+  display: grid;
+  gap: 1rem;
+}
+
+.releaseBlock {
+  padding: 1.5rem;
+}
+
+.releaseHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 1rem;
+  align-items: end;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.2rem;
+}
+
+.featureCard {
+  padding: 1.2rem;
+  background: rgba(249, 249, 249, 0.96);
+}
+
+.featureTop {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.featureTop h4,
+.featureImpact,
+.statusItem strong {
+  margin: 0;
+  letter-spacing: -0.03em;
+}
+
+.featureTop h4 {
+  font-size: 1.15rem;
+}
+
+.featureTop p,
+.featureDetail {
+  margin: 0;
+}
+
+.featureDetail {
+  margin-top: 0.9rem;
+}
+
+.featureImpact {
+  margin-top: 1rem;
+  padding-top: 0.9rem;
+  border-top: 1px solid var(--line);
+  color: var(--accent-strong);
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.statusGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 1rem;
+}
+
+.statusCard,
+.statusList {
+  padding: 1.45rem;
+}
+
+.statusList {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.statusItem {
+  display: grid;
+  gap: 0.35rem;
+  padding: 0.95rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.statusItem:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+@media (max-width: 980px) {
+  .hero,
+  .releaseHeader,
+  .featureGrid,
+  .statusGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .shell {
+    width: min(calc(100% - 1.2rem), var(--max-page));
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .navActions,
+  .ctaRow {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .navCta,
+  .secondaryCta {
+    width: 100%;
+  }
+}
