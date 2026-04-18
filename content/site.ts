@@ -271,9 +271,23 @@ export const footerTags = [
 
 export const siteNav = [
   { href: "/", label: "Home" },
-  { href: "/docs", label: "Docs" },
-  { href: "/updates", label: "Updates" }
+  {
+    href: "/docs",
+    label: "Docs",
+    subLinks: [
+      { href: "/docs#architecture", label: "Architecture", description: "Grammar to backend pipeline" },
+      { href: "/docs#mcp", label: "MCP Integration", description: "Agent introspection tools" }
+    ]
+  },
+  {
+    href: "/updates",
+    label: "Updates",
+    subLinks: [
+      { href: "/updates#latest", label: "Latest Release", description: "See what is new" }
+    ]
+  }
 ];
+
 
 export const docsSections = [
   {
@@ -288,7 +302,7 @@ export const docsSections = [
 
 export const footerWordmark = "WINSCRIPT";
 
-export const heroEyebrow = "WinScript-lang";
+export const heroEyebrow = "WinScript";
 
 export const heroSupportingLine =
   "The open scripting language for Windows that bridges the gap between AI agents and application APIs.";

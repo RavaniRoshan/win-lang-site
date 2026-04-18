@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { NavLinks } from "@/components/site/Nav";
+import { BrandLogo } from "@/components/site/BrandLogo";
 import { CodeBlock } from "@/components/site/CodeBlock";
 import { ConstructList } from "@/components/site/ConstructList";
 import { DiagramCard } from "@/components/site/DiagramCard";
@@ -29,22 +31,14 @@ export default function DocsPage() {
     <main className={styles.page}>
       <div className={styles.shell}>
         <header className={styles.nav}>
-          <Link href="/" className={styles.brand}>
-            WinScript-lang
-          </Link>
-          <nav className={styles.navLinks} aria-label="Docs navigation">
-            {siteNav.map((item) => (
-              <Link key={item.href} href={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </nav>
+          <BrandLogo text="WinScript-lang" />
+          <NavLinks />
           <div className={styles.navActions}>
             <a href={repoUrl} className={styles.secondaryCta} target="_blank" rel="noreferrer">
               GitHub repo
             </a>
-            <Link href="/" className={styles.navCta}>
-              Back to home
+            <Link href="/" className={`${styles.navCta} ${styles.dashboardStyle}`}>
+              Dashboard
             </Link>
           </div>
         </header>
